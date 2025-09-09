@@ -1,1 +1,20 @@
+import React from "react";
+
+export default function Portfolio({ projects = [] }) {
+  if (!projects.length) return <p>No projects yet.</p>;
+  return (
+    <ul>
+      {projects.map((p, i) => (
+        <li key={i}>
+          <strong>{p.title}</strong> — {p.description}{" "}
+          {p.link && (
+            <a href={p.link} target="_blank" rel="noreferrer">
+              View
+            </a>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+}
 
